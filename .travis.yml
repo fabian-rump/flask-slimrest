@@ -1,0 +1,18 @@
+language: python
+python:
+- '2.7'
+- '3.4'
+- '3.5'
+- '3.6'
+sudo: false
+script:
+- nosetests
+after_success:
+- codecov
+deploy:
+  provider: pypi
+  user: fabian-rump
+  password:
+    secure: HOyQrKFQYbdprWgNVIjeKG1apjcFuzxiV1UoPeCsE6jM6c4nCOD475B/dGQqA67khDY3MhR+8IiQktkQwSlmzp5EGBcN9KvbnLJ+JwxA+PKS7nlbKyaUesXZS4dei/dOh9Pxde6G4iCnDN810bvdy03KWP4Y5fMWjYOyXC8TuqXRDZX/w2UKdgG/Jn7InmpCsNu42KzoenEzVlGVbe19+JOpuo/egu9aiiZ2jW7Vuh3vuasulrEps/tNpuxZyYpw34ApNEv32gcokOY0QxOcFjjw3hd9bOTKKqkBCN+q+X0s6Fs+fLkMVXe2IcdaMybNEVq5ldUdNO8K7qA1LcFSeFlrJ0zpxr8r8SPEjWQdLH8/9nFbADbouJle4pXUnncK9KLj43fO8XMpfykL048kmxaEboF9gt6GUc4ZRtFvdpnkTpLZGaZB/ZQkbt2SgFldmCQgKFpBg1JGa2o5v/t/R8i8/MSGNDNUYiLv3CaG5+5loakUE5YkYNlueywG9ajxBHHC4PQ04fPloxVdMhBhGN3VHPz2GUKwB+3/FbmLyP4LcodJfVGYr9KMlHTHn0mgSuFYJWJqbvPFRUMeakM5Bu6k16utvNHd0mtVF4Qn0HzKcZG737pHWw9WJ1opidlNiPQpbFKIzv6iMR1LLVEld810aX7Bi5230xSpy4T0Vys=
+  on:
+    tags: true
