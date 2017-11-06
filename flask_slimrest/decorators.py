@@ -177,6 +177,33 @@ def paginate(pagination_helper):
     return real_decorator
 
 
+def filter_results(filter_function, filter_args=[]):
+    """ Filter the returned values of the decorated function using a filter function
+
+    When retrieving a collection of objects from a given data source, you may want to allow filtering of the returned objects by using appropriate query arguments.
+    The filter decorator allows you to specify a list of allowed query arguments which will be passed to a filter function that processes the result of the decorated function with these arguments.
+    Depending on the underlying data source (e.g. an ORM, a simple list structure, ... ) the implementation of the filtering process may vary significantly. Since flask_slimrest is
+    designed to work independently of the data source, the filter decorator does not implement any specific filtering method. Instead you have to provide a filter function, which
+    will be called by this decorator. The filter function will receive the unfiltered input as well as the query arguments provided by the user. It must return the filtered result.
+    Please note that if you additionally want to paginate the results, the filter decorator should be applied before the :func:`paginate` decorator is applied.
+
+    :param filter_function: The function which actually does the filtering
+    :type filter_function: types.FunctionType
+    :param filter_args: A list of allowed (whitelisted) query arguments that will be passed to the filter function when provided in the request
+    :returns: The return value of the filter function
+    """
+    def real_decorator(function):
+        @wraps(function)
+        def wrapper(self, *args, **kwargs):
+            passed_args = {}
+            for arg in request.args:
+                if arg in filter_args:
+                    passed_args[arg] = request.args[arg]
+            return filter_function(function(self, *args, **kwargs), **passed_args)
+        return wrapper
+    return real_decorator
+
+
 def add_endpoint(path, methods=['GET']):
     """ Add the decorated function as an endpoint in the given namespace.
 
