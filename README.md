@@ -1,9 +1,9 @@
 Flask-SlimREST
 ==============
 
-[![Build Status](https://travis-ci.org/fabian-rump/flask-slimrest.svg?branch=master)](https://travis-ci.org/fabian-rump/flask-slimrest)
-[![codecov](https://codecov.io/gh/fabian-rump/flask-slimrest/branch/master/graph/badge.svg)](https://codecov.io/gh/fabian-rump/flask-slimrest)
-[![Requirements Status](https://requires.io/github/fabian-rump/flask-slimrest/requirements.svg?branch=master)](https://requires.io/github/fabian-rump/flask-slimrest/requirements/?branch=master)
+[![Build Status](https://travis-ci.org/fabian-marquardt/flask-slimrest.svg?branch=master)](https://travis-ci.org/fabian-marquardt/flask-slimrest)
+[![codecov](https://codecov.io/gh/fabian-marquardt/flask-slimrest/branch/master/graph/badge.svg)](https://codecov.io/gh/fabian-marquardt/flask-slimrest)
+[![Requirements Status](https://requires.io/github/fabian-marquardt/flask-slimrest/requirements.svg?branch=master)](https://requires.io/github/fabian-marquardt/flask-slimrest/requirements/?branch=master)
 
 
 Flask + marshmallow + Flask-SlimREST = ♥ RESTful APIs ♥
