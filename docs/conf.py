@@ -50,8 +50,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'flask_slimrest'
-copyright = '2017, Fabian Rump'
-author = 'Fabian Rump'
+copyright = '2017, Fabian Marquardt'
+author = 'Fabian Marquardt'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
